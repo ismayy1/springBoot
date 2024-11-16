@@ -1,6 +1,7 @@
 package com.tpe.service;
 
 import com.tpe.domain.Student;
+import com.tpe.exception.ConflictException;
 import com.tpe.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class StudentService {
         // email should be unique
         if (repository.existsByEmail(student.getEmail())) {
 
-            throw new ConflictException("Email exists already!");
+            throw new ConflictException("Email exists already");
         }
         repository.save(student);
     }
