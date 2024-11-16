@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository // optional, because we're extending this interface from JpaRepository
 public interface StudentRepository extends JpaRepository<Student, Long> {
+    boolean existsByEmail(String email);
 }
