@@ -3,6 +3,7 @@ package com.tpe.controller;
 import com.tpe.domain.Student;
 import com.tpe.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,7 @@ public class StudentController {
     public ResponseEntity<List<Student>> getAll() {
 
         List<Student> studentList = service.getAllStudents();
-        return ResponseEntity.ok(studentList);
+        return ResponseEntity.ok(studentList);  // it should return status code 200-> everything is ok, and list of students
+//        return new ResponseEntity<>(studentList, HttpStatus.OK);    // alternative
     }
 }
