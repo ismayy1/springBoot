@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
     // In Spring Data JPS there's a default method existsById()
-    // But we can update Id with any of the fields name, in this case existsByEmail()
+    // But we can update ID with any of the fields name, in this case existsByEmail()
     boolean existsByEmail(String email);
 }
